@@ -1,52 +1,75 @@
 <div *ngIf="!pais; else divPais" class="alert alert-info">Espero por favor</div>
 
 <ng-template #divPais>
-  <div class="row">
-    <div class="col-12">
-      <h1>
-        País: <small>{{ pais.name }}</small>
-      </h1>
+  <div class="animate__animated animate__fadeInDown">
+    <div class="row">
+      <div class="col-12">
+        <h1>
+          País: <small>{{ pais.name }}</small>
+        </h1>
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-4">
-      <h3>Bandera</h3>
-      <img class="img-thumbnail" [src]="pais.flag" alt="">
+    <div class="row">
+      <div class="col-4">
+        <h3>Bandera</h3>
+        <img class="img-thumbnail" [src]="pais.flag" alt="" />
+      </div>
+      <div class="col">
+        <h3>Información</h3>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Población: </strong> {{ pais.population | number }}
+          </li>
+          <li class="list-group-item">
+            <strong>Código numérico: </strong> {{ pais.alpha3Code }}
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="col">
-      <h3>Información</h3>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <strong>Población: </strong> {{ pais.population | number }}
-        </li>
-        <li class="list-group-item">
-          <strong>Código numérico: </strong> {{ pais.alpha3Code }}
-        </li>
-      </ul>
-    </div>
-  </div>
 
-  <h3>Traducciones</h3>
-  <div class="row">
-    <div class="col">
-      <span class="badge bg-primary mr-1" title="DE">{{pais.translations.de}}</span>
-      <span class="badge bg-primary mr-1" title="ES">{{pais.translations.es}}</span>
-      <span class="badge bg-primary mr-1" title="FR">{{pais.translations.fr}}</span>
-      <span class="badge bg-primary mr-1" title="JA">{{pais.translations.ja}}</span>
-      <span class="badge bg-primary mr-1" title="IT">{{pais.translations.it}}</span>
-      <span class="badge bg-primary mr-1" title="BR">{{pais.translations.br}}</span>
-      <span class="badge bg-primary mr-1" title="PT">{{pais.translations.pt}}</span>
-      <span class="badge bg-primary mr-1" title="NL">{{pais.translations.nl}}</span>
-      <span class="badge bg-primary mr-1" title="HR">{{pais.translations.hr}}</span>
-      <span class="badge bg-primary mr-1" title="FA">{{pais.translations.fa}}</span>
-      <span class="badge bg-primary mr-1" title="HU">{{pais.translations.hu}}</span>
+    <h3>Traducciones</h3>
+    <div class="row">
+      <div class="col">
+        <span class="badge bg-primary mr-1" title="DE">{{
+          pais.translations.de
+        }}</span>
+        <span class="badge bg-primary mr-1" title="ES">{{
+          pais.translations.es
+        }}</span>
+        <span class="badge bg-primary mr-1" title="FR">{{
+          pais.translations.fr
+        }}</span>
+        <span class="badge bg-primary mr-1" title="JA">{{
+          pais.translations.ja
+        }}</span>
+        <span class="badge bg-primary mr-1" title="IT">{{
+          pais.translations.it
+        }}</span>
+        <span class="badge bg-primary mr-1" title="BR">{{
+          pais.translations.br
+        }}</span>
+        <span class="badge bg-primary mr-1" title="PT">{{
+          pais.translations.pt
+        }}</span>
+        <span class="badge bg-primary mr-1" title="NL">{{
+          pais.translations.nl
+        }}</span>
+        <span class="badge bg-primary mr-1" title="HR">{{
+          pais.translations.hr
+        }}</span>
+        <span class="badge bg-primary mr-1" title="FA">{{
+          pais.translations.fa
+        }}</span>
+        <span class="badge bg-primary mr-1" title="HU">{{
+          pais.translations.hu
+        }}</span>
+      </div>
     </div>
-  </div>
 
-  <!-- Nos pinta el contenido del objeto -->
-  <!-- <pre class="mt-5">
+    <!-- Nos pinta el contenido del objeto -->
+    <!-- <pre class="mt-5">
     {{ pais | json }}
   </pre> -->
-
+  </div>
 </ng-template>
